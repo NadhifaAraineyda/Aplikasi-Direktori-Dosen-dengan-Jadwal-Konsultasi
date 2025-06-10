@@ -1,73 +1,96 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Direktori Dosen & Jadwal Konsultasi</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
       padding: 20px;
     }
-    header, footer {
+    header {
       background-color: #004080;
       color: white;
       padding: 10px;
       text-align: center;
     }
-    nav a {
-      margin: 0 10px;
-      color: white;
-      text-decoration: none;
+    section {
+      margin: 20px 0;
     }
-    .dosen-card {
-      border: 1px solid #ccc;
+    .card {
+      background-color: white;
       padding: 15px;
-      margin-bottom: 10px;
-      border-radius: 5px;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .btn {
+    label {
+      display: block;
+      margin: 5px 0 2px;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 15px;
+    }
+    button {
       background-color: #004080;
       color: white;
-      padding: 5px 10px;
-      text-decoration: none;
-      border-radius: 3px;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0059b3;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Aplikasi Direktori Dosen</h1>
-    <nav>
-      <a href="#">Beranda</a>
-      <a href="#">Direktori Dosen</a>
-      <a href="#">Jadwal Konsultasi</a>
-      <a href="#">Riwayat</a>
-    </nav>
-  </header>
+<header>
+  <h1>Direktori Dosen & Jadwal Konsultasi</h1>
+</header>
 
-  <main>
-    <h2>Daftar Dosen</h2>
+<section class="card">
+  <h2>Login Pengguna</h2>
+  <label for="role">Pilih Role:</label>
+  <select id="role">
+    <option value="mahasiswa">Mahasiswa</option>
+    <option value="dosen">Dosen</option>
+  </select>
+  <label for="email">Email:</label>
+  <input type="email" id="email" placeholder="Masukkan email">
+  <label for="password">Password:</label>
+  <input type="password" id="password" placeholder="Masukkan password">
+  <button>Login</button>
+</section>
 
-    <div class="dosen-card">
-      <h3>Dr. Ahmad Santoso, M.Kom</h3>
-      <p>Program Studi: Teknik Informatika</p>
-      <p>Keahlian: Kecerdasan Buatan, Pembelajaran Mesin</p>
-      <a href="#" class="btn">Jadwalkan Konsultasi</a>
-    </div>
+<section class="card">
+  <h2>Direktori Dosen</h2>
+  <label for="search">Cari Dosen (Nama / Prodi / Keahlian):</label>
+  <input type="text" id="search" placeholder="Contoh: Teknik Informatika">
+  <div id="dosen-list">
+    <!-- Data dosen akan dimasukkan di sini -->
+    <p><strong>Dr. Ahmad Yusuf</strong> – Teknik Informatika – AI & Data Science</p>
+    <p><strong>Dra. Lilis Wahyuni</strong> – Pendidikan – Manajemen Pendidikan</p>
+  </div>
+</section>
 
-    <div class="dosen-card">
-      <h3>Ir. Siti Aminah, M.T</h3>
-      <p>Program Studi: Sistem Informasi</p>
-      <p>Keahlian: Basis Data, Rekayasa Perangkat Lunak</p>
-      <a href="#" class="btn">Jadwalkan Konsultasi</a>
-    </div>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Universitas Muhammadiyah Surakarta</p>
-  </footer>
+<section class="card">
+  <h2>Jadwal Konsultasi</h2>
+  <label for="dosen">Pilih Dosen:</label>
+  <select id="dosen">
+    <option value="ahmad">Dr. Ahmad Yusuf</option>
+    <option value="lilis">Dra. Lilis Wahyuni</option>
+  </select>
+  <label for="tanggal">Tanggal:</label>
+  <input type="date" id="tanggal">
+  <label for="waktu">Waktu:</label>
+  <input type="time" id="waktu">
+  <button>Jadwalkan Konsultasi</button>
+</section>
 
 </body>
 </html>
